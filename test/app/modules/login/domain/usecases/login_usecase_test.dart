@@ -1,5 +1,3 @@
-// ignore_for_file: void_checks
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
