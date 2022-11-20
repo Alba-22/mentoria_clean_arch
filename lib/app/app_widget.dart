@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'modules/login/presentation/pages/login_page.dart';
+
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
 
@@ -10,6 +12,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
+      home: const LoginPage(),
     );
   }
 }
