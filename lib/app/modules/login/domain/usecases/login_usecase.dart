@@ -6,7 +6,7 @@ import '../entities/login_entity.dart';
 import '../repositories/login_repository.dart';
 
 abstract class LoginUsecase {
-  Future<Either<Failure, void>> login(LoginEntity credentials);
+  Future<Either<Failure, void>> call(LoginEntity credentials);
 }
 
 class LoginUsecaseImpl implements LoginUsecase {
@@ -15,10 +15,10 @@ class LoginUsecaseImpl implements LoginUsecase {
   LoginUsecaseImpl(this._repository);
 
   @override
-  Future<Either<Failure, void>> login(LoginEntity credentials) async {
+  Future<Either<Failure, void>> call(LoginEntity credentials) async {
     final tokens = await _repository.getTokens(credentials);
     return tokens.fold(
-      (l) => Left(l),
+      left,
       (data) async {
         return await _repository.saveToken(data);
       },
