@@ -3,9 +3,11 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:injectable/injectable.dart';
 
 import 'local_storage.dart';
 
+@Injectable(as: LocalStorage)
 class SecureStorage implements LocalStorage {
   final FlutterSecureStorage _storage;
 

@@ -1,12 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:mentoria_clean_arch/app/core/services/local_storage/secure_storage_service.dart';
-import 'package:mentoria_clean_arch/app/modules/login/domain/entities/login_entity.dart';
+import 'package:mentoria_clean_arch/app/core/di/locator.dart';
 
-import '../../data/datasources/retrofit_login_remote_datasource.dart';
-import '../../data/repositories/login_repository_impl.dart';
-import '../../domain/usecases/login_usecase.dart';
+import '../../domain/entities/login_entity.dart';
 import 'login_store.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,16 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final store = LoginStore(
-    LoginUsecaseImpl(
-      LoginRepositoryImpl(
-        RetrofitLoginRemoteDatasource(Dio()),
-        SecureStorage(
-          const FlutterSecureStorage(),
-        ),
-      ),
-    ),
-  );
+  final store = locator.get<LoginStore>();
 
   final userController = TextEditingController();
   final passwordController = TextEditingController();

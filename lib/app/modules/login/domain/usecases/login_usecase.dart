@@ -1,4 +1,5 @@
 import 'package:fpdart/fpdart.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:mentoria_clean_arch/app/core/errors/failures/failures.dart';
 
@@ -9,6 +10,7 @@ abstract class LoginUsecase {
   Future<Either<Failure, void>> call(LoginEntity credentials);
 }
 
+@Injectable(as: LoginUsecase)
 class LoginUsecaseImpl implements LoginUsecase {
   final LoginRepository _repository;
 

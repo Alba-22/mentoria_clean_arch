@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../domain/entities/login_entity.dart';
 import '../../domain/usecases/login_usecase.dart';
@@ -14,6 +15,7 @@ class LoginState with _$LoginState {
   factory LoginState.failed(String message) = _LoginFailedState;
 }
 
+@injectable
 class LoginStore extends ValueNotifier<LoginState> {
   final LoginUsecase _usecase;
 

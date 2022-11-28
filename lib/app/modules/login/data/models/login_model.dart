@@ -6,7 +6,7 @@ part 'login_model.freezed.dart';
 part 'login_model.g.dart';
 
 @freezed
-abstract class LoginModel with _$LoginModel {
+class LoginModel with _$LoginModel {
   const LoginModel._();
 
   factory LoginModel({

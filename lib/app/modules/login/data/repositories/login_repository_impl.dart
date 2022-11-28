@@ -1,4 +1,5 @@
 import 'package:fpdart/fpdart.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:mentoria_clean_arch/app/core/errors/failures/failures.dart';
 import 'package:mentoria_clean_arch/app/core/services/local_storage/local_storage.dart';
@@ -10,6 +11,7 @@ import '../datasources/login_remote_datasource.dart';
 import '../models/login_model.dart';
 
 // TODO: Deixar catch mais especifico
+@Injectable(as: LoginRepository)
 class LoginRepositoryImpl implements LoginRepository {
   final LoginRemoteDatasource _remoteDatasource;
   final LocalStorage _localStorage;

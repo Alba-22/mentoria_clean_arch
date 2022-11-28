@@ -16,6 +16,8 @@ dependencies:
   flutter_secure_storage: ^6.0.0
   fpdart: ^0.3.0
   freezed_annotation: ^2.2.0
+  get_it: ^7.2.0
+  injectable: 1.5.4
   json_annotation: ^4.7.0
   retrofit: ^3.3.1
 
@@ -25,6 +27,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
   freezed:
+  injectable_generator: 1.5.4
   json_serializable: ^6.5.4
   mocktail:
   retrofit_generator: ^4.2.0
